@@ -1,0 +1,164 @@
+:root {
+    --background: rgb(15, 15, 15);
+    --primary-color: rgb(30, 30, 30);
+    --secondary-color: rgb(115, 115, 115);
+    --accent-color: rgb(214, 222, 164);
+    --text-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    color: var(--text-color);
+}
+
+body {
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+   margin-top: 100px;
+   margin-bottom: 20px;
+   font-size: 3rem;
+   font-weight: 800;
+   text-transform: uppercase;
+   text-align: center;
+   color:var(--accent-color);
+}
+
+.wrapper {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#taskInput {
+    box-sizing: border-box;
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color);
+    caret-color: var(--accent-color);
+}
+
+form {
+    position: relative;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#addBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+
+.task {
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.task .taskText {
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
+    transition: 300ms ease;
+}
+
+.deleteBtn {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.deleteBtn svg {
+    transition: 300ms ease;
+}
+
+.deleteBtn:hover svg {
+    fill: rgb(255, 0, 0);
+}
+
+.customCheckbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 25%;
+    min-height: 10px;
+    min-width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .customCheckbox {
+    background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ .customCheckbox svg {
+    fill: var(--primary-color);
+}
+
+input[type="checkbox"]:checked ~ .taskText {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media(max-width: 500px) {
+    html {
+        font-size: 12pt;
+    }
+
+    #addBtn {
+        position: unset;
+        width: 100%;
+        margin-top: 10px;
+        padding: 15px;
+        height: auto;
+    }
+
+    h1 {
+        margin-top: 50px;
+        font-size: 15vw;
+    }
+}
