@@ -1,2 +1,4 @@
 # to-do-list
-Java practice project to keep track of tasks.
+- Javascript practice project to keep track of tasks.
+- Ran on standard web browser.
+- Does not save once browser window is closed.
